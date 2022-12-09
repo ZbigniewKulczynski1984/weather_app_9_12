@@ -30,3 +30,17 @@ document.getElementById('generate').addEventListener('click', () => {
 			updateUI();
 		});
 });
+
+
+//get rout
+const getWeatherInfo = async (baseUrl, zipArea, apiKey) => {
+
+    const fetchWeather = await fetch( baseUrl + zipArea + apiKey);
+    
+    try{
+        const data = await fetchWeather.json();
+        return data;
+    } catch (error) {
+        console.log("error", error);
+    }
+}
