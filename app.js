@@ -54,3 +54,13 @@ const sendData = async (url ='', data = {})=>{
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data),
     });
+
+
+    try {
+        const conclusion = pushData.json();
+        return conclusion;
+        } catch (error) {
+            console.log("error", error);
+        }
+    }
+
