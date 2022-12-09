@@ -9,3 +9,11 @@ const temprature = document.getElementById("temp");
 let d = new Date();
 //add 1 to make a natural numeric
 let newDate = d.getMonth()+ 1 +'.'+ d.getDate()+'.'+ d.getFullYear();
+
+//Event listener to add function to exiting html dom elemnt
+document.getElementById('generate').addEventListener('click', () =>{
+    //check if the user click on button without type anything 
+    if(zipArea.value.trim() === "" || baseFeelings.value.trim() === ""){
+        alert("please enter zip code and feelings")
+        return;
+    }
