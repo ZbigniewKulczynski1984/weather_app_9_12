@@ -44,3 +44,13 @@ const getWeatherInfo = async (baseUrl, zipArea, apiKey) => {
         console.log("error", error);
     }
 }
+
+
+//post rout
+const sendData = async (url ='', data = {})=>{
+    //post data now to server
+    const pushData = await fetch(url, {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data),
+    });
