@@ -64,3 +64,15 @@ const sendData = async (url ='', data = {})=>{
         }
     }
 
+//function update ui
+const updateUI = async () => {
+    const fetchData = await fetch('/recieveData');
+    try {
+        const newData = await fetchData.json();
+        document.getElementById("date").innerHTML = newData.date;
+        document.getElementById("temp").innerHTML = newData.temp;
+        document.getElementById("content").innerHTML = newData.content;
+    } catch (error) {
+        console.log("error", error);
+    }
+}
